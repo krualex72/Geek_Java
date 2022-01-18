@@ -5,7 +5,6 @@
  * @version 18.01.2022
 */
 import java.util.Arrays;
-import java.util.Scanner;
 
 class HomeWorkThree {
     public static void main(String[] args) {
@@ -28,7 +27,7 @@ class HomeWorkThree {
         System.out.println( "Second Array Check:" + checkBalance(balanceArr2));
         System.out.println("\n--- Section 8*** ---");
         int[] baseArr3 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        moveArrayData(baseArr3);
+        moveArrayData(baseArr3, -4); // отрицательное значение - сдвиг влево
     }
     
     // Task 1
@@ -128,15 +127,10 @@ class HomeWorkThree {
     }
     
     // Task 8***
-    static void moveArrayData(int arr[]) {
+    static void moveArrayData(int arr[], int steps) {
         System.out.println("Original array   " + Arrays.toString(arr));
         int dim = arr.length; // определяем размерность массива
-        int hold; // переменная для хранения 
-        System.out.println ("If you want to move the Array Data to the left use '-' (minus)! ");
-        Scanner sc = new Scanner(System.in);
-        System.out.print ("How many steps do you want to do? :");
-        int steps = sc.nextInt(); // запрашиваем количество смещений
-        sc.close();
+        int hold; // переменная для хранения
         if (steps > 0 ) {
             for (int st = 0; st < steps; st++) { // каждый цикл - одно смещение вправо
                 hold = arr[dim-1];
